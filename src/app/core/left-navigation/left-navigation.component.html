@@ -1,0 +1,152 @@
+<nav class="page-sidebar" data-pages="sidebar" [ngClass]="{'visible':showMenu || expandMenu}"
+     (mouseenter)='displayMenu()' (mouseleave)='hideMenu()' (blur)='hideMenu()'>
+  <div class="sidebar-overlay-slide from-top" [ngClass]="{'visible':showOverlay}" id="appMenu">
+    <div class="row">
+    </div>
+  </div>
+  <div class="sidebar-header">
+    <h2 class="brand">Toyota</h2>
+    <div class="sidebar-header-controls">
+      <div><span class="arrow fa fa-caret-up" (click)="toggleOverlay()" [ngClass]="{'rotate180':showOverlay}"></span>
+      </div>
+      <div><span class="pin fa fa-thumb-tack" (click)="toggleExpanded()" [ngClass]="{'pinned':expandMenu}"></span></div>
+    </div>
+    <div class="brand-logo"></div>
+  </div>
+  <div class="sidebar-menu">
+    <div class="scroll-wrapper menu-items">
+      <ul class="menu-items scroll-content">
+        <li class="first" [ngClass]="{'active':router.url.indexOf('/admin')  > -1}">
+          <a href="" (click)="toggleSubMenu('superUser')"><span class="title">Admin</span>
+            <span class="arrow fa fa-caret-left" [ngClass]="{'rotate90':superUserSub}"></span></a>
+          <!-- Admin Icon -->
+          <div class="icon-thumbnail icon-thumbnail-main">
+            <div class="icon-thumbnail-border"></div>
+            <div class="icon-thumbnail-icon icon-thumbnail-admin"></div>
+          </div>
+          <!-- Sub-Menu Items -->
+          <ul class="sub-menu" [ngClass]="{'visible':superUserSub}">
+            <!-- Organisation -->
+            <li
+              [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('admin/organisation')  > -1}">
+              <a href="" (click)="toggleSubMenu('superUserOrganisation')"><span class="title">Organisation</span>
+                <span class="arrow fa fa-caret-left" [ngClass]="{'rotate90':superUserOrganisationSub}"></span></a>
+              <span class="icon-thumbnail">Og</span>
+              <ul class="sub-menu" [ngClass]="{'visible':superUserOrganisationSub}">
+                <li
+                  [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('admin/organisation/organogram')  > -1}">
+          
+                  <span class="icon-thumbnail">Gg</span>
+                </li>
+              </ul>
+            </li>
+            <!-- Manage Roles -->
+            <li [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('/role')  > -1}">
+             
+              <span class="icon-thumbnail">Mr</span>
+            </li>
+            <!-- Manage Staff -->
+            <li [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('/staff')  > -1}">
+             
+              <span class="icon-thumbnail">Ms</span>
+            </li>
+            <!-- Manage Users -->
+            <li [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('/user')  > -1}">
+             
+              <span class="icon-thumbnail">Mu</span>
+            </li>
+            <!-- Manage Dealerships -->
+            <li [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('/dealership')  > -1}">
+             
+              <span class="icon-thumbnail">Md</span>
+            </li>
+            <!-- Manage Customers -->
+            <li [ngClass]="{'active':router.url.indexOf('/admin')  > -1 && router.url.indexOf('/customer')  > -1}">
+            
+              <span class="icon-thumbnail">Mg</span>
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</nav>
+
+
+<!--
+
+    Example menu items:
+
+    detail display:
+
+    <li>
+        <a href="index.html" class="detailed">
+        <span class="title">Dashboard</span>
+        <span class="details">12 New Updates</span>
+        </a>
+        <span class="bg-success icon-thumbnail"><i class="fa-home"></i></span>
+    </li>
+
+    normal:
+
+    <li>
+                    <a href="social.html"><span class="title">Social</span></a>
+                    <span class="icon-thumbnail"><i class="fa-social"></i></span>
+    </li>
+
+    level:
+
+    <li>
+                    <a >
+                    <span class="title">Forms</span>
+                    <span class=" fa fa-caret-left"></span>
+                    </a>
+                    <span class="icon-thumbnail"><i class="fa-form"></i></span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="form_elements.html">Form Elements</a>
+                            <span class="icon-thumbnail">fe</span>
+                        </li>
+                        <li class="">
+                            <a href="form_layouts.html">Form Layouts</a>
+                            <span class="icon-thumbnail">fl</span>
+                        </li>
+                        <li class="">
+                            <a href="form_wizard.html">Form Wizard</a>
+                            <span class="icon-thumbnail">fw</span>
+                        </li>
+                    </ul>
+                </li>
+
+    multi-level:
+
+      <li>
+                    <a><span class="title">Menu Levels</span>
+                    <span class="fa fa-caret-left"></span></a>
+                    <span class="icon-thumbnail"><i class="pg-menu_lv"></i></span>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="javascript:;">Level 1</a>
+                            <span class="icon-thumbnail">L1</span>
+                        </li>
+                        <li>
+                            <a href="javascript:;"><span class="title">Level 2</span>
+                            <span class="fa fa-caret-left"></span></a>
+                            <span class="icon-thumbnail">L2</span>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="javascript:;">Sub Menu</a>
+                                    <span class="icon-thumbnail">Sm</span>
+                                </li>
+                                <li>
+                                    <a href="ujavascript:;">Sub Menu</a>
+                                    <span class="icon-thumbnail">Sm</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+     </li>
+
+-->
